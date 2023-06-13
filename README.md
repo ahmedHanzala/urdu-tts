@@ -1,4 +1,4 @@
-<h1>tortoise-tts: Indian Accent Voice Cloning and Urdu Text-to-Speech</h1>
+<h1>Urdu Voice Cloning using Tortoise-tts</h1>
   <p>
   <a href="https://github.com/ahmedHanzala/urdu-voice-cloning/blob/main/LICENSE">
   <img src="https://img.shields.io/github/license/MIT/ahmedHanzala/urdu-voice-cloning" alt="MIT License">
