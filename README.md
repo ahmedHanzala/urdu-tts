@@ -1,10 +1,3 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>tortoise-tts: Indian Accent Voice Cloning and Urdu Text-to-Speech</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/4.1.0/github-markdown.min.css">
-</head>
-<body>
   <article class="markdown-body">
     <h1>tortoise-tts: Indian Accent Voice Cloning and Urdu Text-to-Speech</h1>
     <p>
@@ -59,5 +52,4 @@
     <h2>License</h2>
     <p>This project is licensed under the <a href="LICENSE">MIT License</a>. Feel free to use and modify the code according to your needs.</p>
   </article>
-</body>
-</html>
+
