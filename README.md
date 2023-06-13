@@ -1,7 +1,6 @@
 <h1>Urdu Voice Cloning using Tortoise-tts</h1>
   <p>
-  <a href="https://github.com/ahmedHanzala/urdu-voice-cloning/blob/main/LICENSE">
-  <img src="https://img.shields.io/github/license/MIT/ahmedHanzala/urdu-voice-cloning" alt="MIT License">
+  <a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-blue.svg" alt="License: MIT"></a>
 </a>
 <a href="https://colab.research.google.com/drive/1g_VHQQvl-23tT635uz57isbcvsYEvyZR?usp=sharing">
   <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab">
