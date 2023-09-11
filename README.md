@@ -40,6 +40,13 @@ https://github.com/ahmedHanzala/urdu-voice-cloning/assets/105395393/fae434cb-df1
   
 https://github.com/ahmedHanzala/urdu-voice-cloning/assets/105395393/05ca7d27-87fd-4001-b62e-26ee71a76d5b
 
+askdnasdn
+
+<audio controls>
+    <source src="https://github.com/ahmedHanzala/urdu-voice-cloning/assets/105395393/05ca7d27-87fd-4001-b62e-26ee71a76d5b" type="audio/wav">
+    Your browser does not support the audio element.
+</audio>
+
 
 <h2> Urdu script and urdu text-to-speech testing </h2>
 
