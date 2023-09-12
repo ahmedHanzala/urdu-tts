@@ -1,5 +1,11 @@
-<h1>Urdu Speech Synthesis: Testing Tortoise-TTS and
-Evaluating its Multilingual Capabilities</h1>
+<h1>Generative Urdu Speech Synthesis</h1>
+
+ <a href="https://huggingface.co/zohann/urdu-tts" target="_blank">
+        <button>
+            <img src="https://huggingface.co/front/assets/hugging_face_logo.svg" alt="Hugging Face Logo" width="100">
+        </button>
+    </a>
+    
   <p>
   <a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-blue.svg" alt="License: MIT"></a>
 </a>
@@ -20,78 +26,101 @@ Evaluating its Multilingual Capabilities</h1>
 NOTE: This repository is incomplete. I have for now shared my results, ill update this README and add usage, training info, and other documentations. The training files and others also have not been pushed yet and the repo is incomplete. So it might be difficult for a layman to use (working on doing that soon), but for people familiar with the tortoise arcitecture this would work.
 </p>
     
-<h2>Features</h2>
-    <ul>
-      <li><strong>South-Asian Accent Voice Cloning:</strong> tortoise-tts better captures european and american accents but when a non native speaker voice is cloned it americanizes that voice and completely fails. This model has been finetuned on a south-asian accent dataset, so it performs very well in cloning voices with a south-asian accent.
-        to better capture and reproduce Indian accents, enabling accurate voice cloning for a variety of Indian English accents. It offers improved voice quality and natural-sounding speech synthesis for a more authentic experience.</li>
-      <li><strong>Urdu Text-to-Speech:</strong> The model also includes support for Urdu text-to-speech, it can understand the arabic-urdu script and produce speech in urdu based on the text. </li>
-    </ul>
-    <h2> Results and Comparisons</h2>
-    
 
-<pre><code><strong>Prompt:</strong> we are testing this model for our project.</code></pre>
-  
-<h3>Tortoise-tts cloning an indian accent</h3>
+<h2> Audio Samples </h2>
 
-https://github.com/ahmedHanzala/urdu-voice-cloning/assets/105395393/fae434cb-df10-4b58-8b7d-6e4c50115e32
-
-<h3>Our finetuned Model</h3>
-  
-https://github.com/ahmedHanzala/urdu-voice-cloning/assets/105395393/05ca7d27-87fd-4001-b62e-26ee71a76d5b
-
-askdnasdn
-
-<audio controls>
-    <source src="https://github.com/ahmedHanzala/urdu-voice-cloning/assets/105395393/05ca7d27-87fd-4001-b62e-26ee71a76d5b" type="audio/wav">
-    Your browser does not support the audio element.
-</audio>
-
-<audio controls>
-    <source src="audios/1.wav" type="audio/wav">
-    Your browser does not support the audio element.
-</audio>
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Audio Table</title>
-</head>
-<body>
-    <table border="1">
+  <table border="1">
         <thead>
             <tr>
                 <th>Prompt</th>
-                <th>Sample Audio</th>
+                <th>Audio</th>
             </tr>
         </thead>
         <tbody>
-            <?php for ($i = 1; $i <= 10; $i++) { ?>
-                <tr>
-                    <td>Prompt <?php echo $i; ?></td>
-                    <td>
-                        <audio controls>
-                            <source src="audios/1.wav" type="audio/wav">
-                            Your browser does not support the audio element.
-                        </audio>
-                    </td>
-                </tr>
-            <?php } ?>
+          <tr>
+            <td><pre><code> [English Prompt on our Urdu Model] we are testing this model for our project.</code></pre> </td>
+            <td>
+              <audio controls>
+                <source src="audios/english-only.wav" type="audio/wav">
+                  Your browser does not support the audio element.
+              </audio>
+           </td>
+        </tr>
+            <tr>
+            <td><pre><code>[English + Urdu Prompt] I'm doing good میں اچھا ہو آپ سناؤ </code></pre> </td>
+            <td>
+              <audio controls>
+                <source src="audios/urdu-n-english.wav" type="audio/wav">
+                  Your browser does not support the audio element.
+              </audio>
+           </td>
+        </tr>
+            <tr>
+            <td><pre><code> seecs ایک بہت اچھا ڈیپارٹمنٹ ہے </code></pre> </td>
+            <td>
+              <audio controls>
+                <source src="audios/urdu-only.mov" type="audio/wav">
+                  Your browser does not support the audio element.
+              </audio>
+           </td>
+        </tr>
+            <tr>
+            <td><pre><code> آپ کا نام کیا ہے؟</code></pre> </td>
+            <td>
+              <audio controls>
+                <source src="audios/1.wav" type="audio/wav">
+                  Your browser does not support the audio element.
+              </audio>
+           </td>
+        </tr>
+            <tr>
+            <td><pre><code> كيا آپ انگريزی بولتے ہیں؟</code></pre> </td>
+            <td>
+              <audio controls>
+                <source src="audios/2.wav" type="audio/wav">
+                  Your browser does not support the audio element.
+              </audio>
+           </td>
+        </tr>
+              <tr>
+            <td><pre><code> میں اردو سیکھنے کی کوشش کر رہا ہوں</code></pre> </td>
+            <td>
+              <audio controls>
+                <source src="audios/3.wav" type="audio/wav">
+                  Your browser does not support the audio element.
+              </audio>
+           </td>
+        </tr>
+              <tr>
+            <td><pre><code> آپ کہاں سے ہیں؟</code></pre> </td>
+            <td>
+              <audio controls>
+                <source src="audios/4.wav" type="audio/wav">
+                  Your browser does not support the audio element.
+              </audio>
+           </td>
+        </tr>
+              <tr>
+            <td><pre><code> آپ سے مل کر خوشی ہوئی</code></pre> </td>
+            <td>
+              <audio controls>
+                <source src="audios/5.wav" type="audio/wav">
+                  Your browser does not support the audio element.
+              </audio>
+           </td>
+        </tr>
+              <tr>
+            <td><pre><code>!یہ مجھے بہت پَسند آیا</code></pre> </td>
+            <td>
+              <audio controls>
+                <source src="audios/7.wav" type="audio/wav">
+                  Your browser does not support the audio element.
+              </audio>
+           </td>
+        </tr>
         </tbody>
-    </table>
-</body>
-</html>
+  </table>
 
-
-<h2> Urdu script and urdu text-to-speech testing </h2>
-
-<pre><code><strong>Prompt:</strong> seecs ایک بہت اچھا ڈیپارٹمنٹ ہے</code></pre>
-
-<h3>On Tortoise-tts base model</h3>
-
-https://github.com/ahmedHanzala/urdu-voice-cloning/assets/105395393/31dcefce-fc8d-436e-8c16-11d60de140b7
-
-<h3>On our finetuned Model</h3>
-
-https://github.com/ahmedHanzala/urdu-voice-cloning/assets/105395393/5394a4b4-d685-4e87-a254-7ea9436c3545
 
 
 <h2>Refference</h2>
