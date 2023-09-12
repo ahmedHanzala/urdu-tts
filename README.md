@@ -35,7 +35,7 @@ NOTE: This repository is incomplete. I have for now shared my results, ill updat
         </thead>
         <tbody>
           <tr>
-            <td><pre><code> [English Prompt on our Urdu Model] we are testing this model for our project.</code></pre> </td>
+            <td><pre>[English Prompt on our Urdu Model] we are testing this model for our project.</pre> </td>
             <td>
               <audio controls>
                 <source src="audios/english-only.wav" type="audio/wav">
@@ -44,7 +44,7 @@ NOTE: This repository is incomplete. I have for now shared my results, ill updat
            </td>
         </tr>
             <tr>
-            <td><pre><code>[English + Urdu Prompt] I'm doing good میں اچھا ہو آپ سناؤ </code></pre> </td>
+            <td><pre>[English + Urdu Prompt] I'm doing good میں اچھا ہو آپ سناؤ </pre> </td>
             <td>
               <audio controls>
                 <source src="audios/urdu-n-english.wav" type="audio/wav">
@@ -53,7 +53,7 @@ NOTE: This repository is incomplete. I have for now shared my results, ill updat
            </td>
         </tr>
             <tr>
-            <td><pre><code> seecs ایک بہت اچھا ڈیپارٹمنٹ ہے </code></pre> </td>
+            <td><pre> seecs ایک بہت اچھا ڈیپارٹمنٹ ہے</pre> </td>
             <td>
               <audio controls>
                 <source src="audios/urdu-only.mov" type="audio/wav">
@@ -62,7 +62,7 @@ NOTE: This repository is incomplete. I have for now shared my results, ill updat
            </td>
         </tr>
             <tr>
-            <td><pre><code> آپ کا نام کیا ہے؟</code></pre> </td>
+            <td><pre>آپ کا نام کیا ہے؟</pre> </td>
             <td>
               <audio controls>
                 <source src="audios/1.wav" type="audio/wav">
@@ -71,7 +71,7 @@ NOTE: This repository is incomplete. I have for now shared my results, ill updat
            </td>
         </tr>
             <tr>
-            <td><pre><code> كيا آپ انگريزی بولتے ہیں؟</code></pre> </td>
+            <td><pre> كيا آپ انگريزی بولتے ہیں؟</pre> </td>
             <td>
               <audio controls>
                 <source src="audios/2.wav" type="audio/wav">
@@ -80,7 +80,7 @@ NOTE: This repository is incomplete. I have for now shared my results, ill updat
            </td>
         </tr>
               <tr>
-            <td><pre><code> میں اردو سیکھنے کی کوشش کر رہا ہوں</code></pre> </td>
+            <td><pre> میں اردو سیکھنے کی کوشش کر رہا ہوں</pre> </td>
             <td>
               <audio controls>
                 <source src="audios/3.wav" type="audio/wav">
@@ -89,7 +89,7 @@ NOTE: This repository is incomplete. I have for now shared my results, ill updat
            </td>
         </tr>
               <tr>
-            <td><pre><code> آپ کہاں سے ہیں؟</code></pre> </td>
+            <td><pre> آپ کہاں سے ہیں؟</pre> </td>
             <td>
               <audio controls>
                 <source src="audios/4.wav" type="audio/wav">
@@ -98,7 +98,7 @@ NOTE: This repository is incomplete. I have for now shared my results, ill updat
            </td>
         </tr>
               <tr>
-            <td><pre><code> آپ سے مل کر خوشی ہوئی</code></pre> </td>
+            <td><pre> آپ سے مل کر خوشی ہوئی</pre> </td>
             <td>
               <audio controls>
                 <source src="audios/5.wav" type="audio/wav">
@@ -107,7 +107,7 @@ NOTE: This repository is incomplete. I have for now shared my results, ill updat
            </td>
         </tr>
               <tr>
-            <td><pre><code>!یہ مجھے بہت پَسند آیا</code></pre> </td>
+            <td><pre>!یہ مجھے بہت پَسند آیا</pre> </td>
             <td>
               <audio controls>
                 <source src="audios/7.wav" type="audio/wav">
