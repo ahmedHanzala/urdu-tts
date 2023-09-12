@@ -13,7 +13,7 @@
   </a>
  </p>
  <h2>ANNOUNCEMENT</h2>
- ill be soon uploading the models to huggingface hopefully by the start of next month 
+The weights are opensourced here: https://huggingface.co/zohann/urdu-tts
 
 <h2>Overview</h2>
 <p>This project aims on text-to-speech and cloning voices with indian accents (as most models for tts or voice cloning are trained on English voices and perform very poorly on south-asian or indian accents). This is a fork from the tortoise-tts model and DL-Art-School trainer </p>
