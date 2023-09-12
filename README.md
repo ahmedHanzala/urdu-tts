@@ -1,17 +1,12 @@
-<h1> </h1>
+<h1>Generative Urdu Speech Synthesis</h1>
   <p>
   <a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-blue.svg" alt="License: MIT"></a>
+   
+<a href="https://colab.research.google.com/drive/1gGKaVaWyl6SCWIBWQehWrgHWiG1teFw4">
+  <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Inference in Colab">
 </a>
-<a href="https://colab.research.google.com/drive/1g_VHQQvl-23tT635uz57isbcvsYEvyZR?usp=sharing">
-  <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab">
-</a>
-<a href="https://colab.research.google.com/drive/1FGm_OxAi6f3y8_JExqOqcCyFK2cn6YQu?usp=sharing">
-  <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab">
-</a>
-  <a href="https://colab.research.google.com/drive/1gGKaVaWyl6SCWIBWQehWrgHWiG1teFw4?usp=sharing">
-  <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab">
-  </a>
  </p>
+
  <h2>Announcement</h2>
 The weights are opensourced here: https://huggingface.co/zohann/urdu-tts
 
