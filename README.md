@@ -116,5 +116,4 @@
   <li> https://github.com/neonbjb/tortoise-tts</li>
   </ul>
 <h2>License</h2>
-    <p>This project is licensed under the <a href="LICENSE">MIT License</a>. Feel free to use and modify the code according to your needs.</p>
-  </html>
+    This project is licensed under the MIT License. Feel free to use and modify the code according to your needs.
