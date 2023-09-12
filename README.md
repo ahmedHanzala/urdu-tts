@@ -13,8 +13,7 @@ Evaluating its Multilingual Capabilities</h1>
   <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab">
   </a>
  </p>
- <h2>ANNOUNCEMENT</h2>
- ill be soon uploading the models to huggingface hopefully by the start of next month 
+
 
 <h2>Overview</h2>
 <p>This project aims on text-to-speech and cloning voices with indian accents (as most models for tts or voice cloning are trained on English voices and perform very poorly on south-asian or indian accents). This is a fork from the tortoise-tts model and DL-Art-School trainer </p>
@@ -46,6 +45,40 @@ askdnasdn
     <source src="https://github.com/ahmedHanzala/urdu-voice-cloning/assets/105395393/05ca7d27-87fd-4001-b62e-26ee71a76d5b" type="audio/wav">
     Your browser does not support the audio element.
 </audio>
+
+<audio controls>
+    <source src="audios/1.wav" type="audio/wav">
+    Your browser does not support the audio element.
+</audio>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Audio Table</title>
+</head>
+<body>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Prompt</th>
+                <th>Sample Audio</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php for ($i = 1; $i <= 10; $i++) { ?>
+                <tr>
+                    <td>Prompt <?php echo $i; ?></td>
+                    <td>
+                        <audio controls>
+                            <source src="audios/1.wav" type="audio/wav">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </td>
+                </tr>
+            <?php } ?>
+        </tbody>
+    </table>
+</body>
+</html>
 
 
 <h2> Urdu script and urdu text-to-speech testing </h2>
