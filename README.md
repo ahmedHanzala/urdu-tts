@@ -12,7 +12,7 @@
   <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab">
   </a>
  </p>
- <h2>ANNOUNCEMENT</h2>
+ <h2>Announcement</h2>
 The weights are opensourced here: https://huggingface.co/zohann/urdu-tts
 
 
