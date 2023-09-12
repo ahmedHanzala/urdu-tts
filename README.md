@@ -1,25 +1,15 @@
 <h1>Generative Urdu Speech Synthesis</h1>
-
-    
   <p>
   <a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-blue.svg" alt="License: MIT"></a>
    
-<a href="https://colab.research.google.com/drive/1g_VHQQvl-23tT635uz57isbcvsYEvyZR?usp=sharing">
-  <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab">
+<a href="https://colab.research.google.com/drive/1gGKaVaWyl6SCWIBWQehWrgHWiG1teFw4">
+  <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Inference in Colab">
 </a>
-<a href="https://colab.research.google.com/drive/1FGm_OxAi6f3y8_JExqOqcCyFK2cn6YQu?usp=sharing">
-  <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab">
-</a>
-  <a href="https://colab.research.google.com/drive/1gGKaVaWyl6SCWIBWQehWrgHWiG1teFw4?usp=sharing">
-  <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab">
-  </a>
  </p>
 
 
 <h2>Overview</h2>
-<p>This project aims on text-to-speech and cloning voices with indian accents (as most models for tts or voice cloning are trained on English voices and perform very poorly on south-asian or indian accents). This is a fork from the tortoise-tts model and DL-Art-School trainer </p>
-NOTE: This repository is incomplete. I have for now shared my results, ill update this README and add usage, training info, and other documentations. The training files and others also have not been pushed yet and the repo is incomplete. So it might be difficult for a layman to use (working on doing that soon), but for people familiar with the tortoise arcitecture this would work.
-</p>
+<p> This is a preview of the paper "Generative Urdu Speech Synthesis". All the weights are opensourced <a href="https://huggingface.co/zohann/urdu-tts">here.</a></p>
 
 
 
