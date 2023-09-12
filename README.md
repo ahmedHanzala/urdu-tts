@@ -108,9 +108,10 @@
         </tbody>
   </table>
 
+Adding more and more soon..
 
 
-<h2>Refference</h2>
+<h2>Reference</h2>
 <ul>
   <li> https://github.com/152334H/DL-Art-School</li>
   <li> https://github.com/neonbjb/tortoise-tts</li>
