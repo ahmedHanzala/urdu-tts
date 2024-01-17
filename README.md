@@ -10,7 +10,7 @@
 
 <h2>Overview</h2>
 <p> This is a preview of the paper "Generative Urdu Speech Synthesis". All the weights are opensourced <a href="https://huggingface.co/zohann/urdu-tts">here.</a></p>
-<p> Draft of the paper can be found <a href="https://drive.google.com/file/d/1Ol9fY4AX5TtRrcvcjewltHgb2EwpgC-0/view?usp=sharing">here.</a></p>
+<p> Draft of the paper can be found <a href="https://drive.google.com/uc?export=download&id=1Ol9fY4AX5TtRrcvcjewltHgb2EwpgC-0">here.</a></p>
 For any suggestions feel free to email me at: ahanzala.bscs20seecs@seecs.edu.pk
 
 
