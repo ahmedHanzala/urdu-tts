@@ -9,112 +9,17 @@
 
 
 <h2>Overview</h2>
-<p> This is a preview of the paper "Generative Urdu Speech Synthesis". All the weights are opensourced <a href="https://huggingface.co/zohann/urdu-tts">here.</a></p>
+This repository provides the official implementation of our paper:
+"Generative Urdu Speech Synthesis"
+Published in the IEEE Conference Proceedings, 2024.​
+
+## 📄 Paper
+IEEE Xplore: [https://ieeexplore.ieee.org/document/10795832](https://ieeexplore.ieee.org/document/10795832)
+
+DOI: 10.1109/ICCS62594.2024.10795832
+
+
 For any suggestions feel free to email me at: ahanzala[dot]cs[at]gmail[dot]com
 
-
-
-<h2> Audio Samples </h2>
-
-  <table border="1">
-        <thead>
-            <tr>
-                <th>Prompt</th>
-                <th>Audio</th>
-            </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><pre>[English Prompt on our Urdu Model] we are testing this model for our project.</pre> </td>
-            <td>
-              <audio controls>
-                <source src="audios/english-only.wav" type="audio/wav">
-                  Your browser does not support the audio element.
-              </audio>
-           </td>
-        </tr>
-            <tr>
-            <td><pre>[English + Urdu Prompt] I'm doing good میں اچھا ہو آپ سناؤ </pre> </td>
-            <td>
-              <audio controls>
-                <source src="audios/urdu-n-english.wav" type="audio/wav">
-                  Your browser does not support the audio element.
-              </audio>
-           </td>
-        </tr>
-            <tr>
-            <td><pre> seecs ایک بہت اچھا ڈیپارٹمنٹ ہے</pre> </td>
-            <td>
-              <audio controls>
-                <source src="audios/urdu-only.mov" type="audio/wav">
-                  Your browser does not support the audio element.
-              </audio>
-           </td>
-        </tr>
-            <tr>
-            <td><pre>آپ کا نام کیا ہے؟</pre> </td>
-            <td>
-              <audio controls>
-                <source src="audios/1.wav" type="audio/wav">
-                  Your browser does not support the audio element.
-              </audio>
-           </td>
-        </tr>
-            <tr>
-            <td><pre> كيا آپ انگريزی بولتے ہیں؟</pre> </td>
-            <td>
-              <audio controls>
-                <source src="audios/2.wav" type="audio/wav">
-                  Your browser does not support the audio element.
-              </audio>
-           </td>
-        </tr>
-              <tr>
-            <td><pre> میں اردو سیکھنے کی کوشش کر رہا ہوں</pre> </td>
-            <td>
-              <audio controls>
-                <source src="audios/3.wav" type="audio/wav">
-                  Your browser does not support the audio element.
-              </audio>
-           </td>
-        </tr>
-              <tr>
-            <td><pre> آپ کہاں سے ہیں؟</pre> </td>
-            <td>
-              <audio controls>
-                <source src="audios/4.wav" type="audio/wav">
-                  Your browser does not support the audio element.
-              </audio>
-           </td>
-        </tr>
-              <tr>
-            <td><pre> آپ سے مل کر خوشی ہوئی</pre> </td>
-            <td>
-              <audio controls>
-                <source src="audios/5.wav" type="audio/wav">
-                  Your browser does not support the audio element.
-              </audio>
-           </td>
-        </tr>
-              <tr>
-            <td><pre>!یہ مجھے بہت پَسند آیا</pre> </td>
-            <td>
-              <audio controls>
-                <source src="audios/7.wav" type="audio/wav">
-                  Your browser does not support the audio element.
-              </audio>
-           </td>
-        </tr>
-        </tbody>
-  </table>
-
-Adding more and more soon..
-
-
-<h2>Reference</h2>
-<ul>
-  <li> https://github.com/152334H/DL-Art-School</li>
-  <li> https://github.com/neonbjb/tortoise-tts</li>
-  </ul>
-<h2>License</h2>
-    This project is licensed under the MIT License. Feel free to use and modify the code according to your needs.
+<h2>Abstract</h2>
+In recent years, Natural Language Processing (NLP) and speech synthesis have witnessed significant progress, resulting in the development of advanced Text-to-Speech (TTS) systems for various applications. While many TTS models excel in synthesizing English speech, their adaptability to new the languages, and diverse accents remains a challenging area of exploration. Urdu is a language spoken by millions of people around the globe especially in South Asia. Existing TTS models focus mainly on English and Chinese languages, having a minimal focus on Urdu and other low-resource languages. In this paper, we propose a generative Urdu TTS system. This research also undertakes a comprehensive investigation into the challenges associated with Urdu speech synthesis and evaluates the capabilities of Tortoise-TTS, a TTS model inspired by the DALL-E architecture, when applied to non-English languages, with a primary focus on Urdu.
