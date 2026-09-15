@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Generative Urdu Speech Synthesis</title>
+<meta name="description" content="A generative Urdu text-to-speech system with South-Asian accent voice cloning. ICCS 2024, IEEE Xplore.">
+<meta property="og:title" content="Generative Urdu Speech Synthesis">
+<meta property="og:description" content="A generative Urdu text-to-speech system with South-Asian accent voice cloning. ICCS 2024, IEEE Xplore.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Nastaliq+Urdu:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#ffffff; --panel:#f7f8fa; --border:#e3e6ea; --text:#1c2024;
+  --muted:#5d666f; --accent:#1f6feb; --accent-soft:#e8f0fe; --code:#eef1f4;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg:#0f1216; --panel:#171b21; --border:#272d35; --text:#e6e9ed;
+    --muted:#9aa4af; --accent:#5a9bff; --accent-soft:#16233a; --code:#1b2027;
+  }
+}
+*{box-sizing:border-box}
+body{
+  margin:0; background:var(--bg); color:var(--text);
+  font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+  font-size:16px; line-height:1.65; -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:860px; margin:0 auto; padding:0 20px}
+header{padding:64px 0 36px; text-align:center; border-bottom:1px solid var(--border)}
+h1{
+  font-size:clamp(28px,5vw,42px); line-height:1.18; font-weight:700;
+  margin:0 0 18px; letter-spacing:-0.02em;
+}
+.authors{font-size:17px; margin:0 0 6px; font-weight:500}
+.authors a{color:var(--text); text-decoration:none; border-bottom:1px solid var(--border)}
+.authors a:hover{color:var(--accent); border-color:var(--accent)}
+.venue{color:var(--muted); font-size:15px; margin:0 0 26px}
+.venue strong{color:var(--text); font-weight:600}
+.links{display:flex; flex-wrap:wrap; gap:10px; justify-content:center}
+.btn{
+  display:inline-flex; align-items:center; gap:8px; text-decoration:none;
+  background:var(--panel); border:1px solid var(--border); color:var(--text);
+  padding:9px 16px; border-radius:999px; font-size:14.5px; font-weight:500;
+  transition:border-color .15s, background .15s, transform .15s;
+}
+.btn:hover{border-color:var(--accent); background:var(--accent-soft); transform:translateY(-1px)}
+.btn svg{width:16px; height:16px; flex:none; fill:currentColor}
+section{padding:40px 0; border-bottom:1px solid var(--border)}
+section:last-of-type{border-bottom:none}
+h2{font-size:22px; font-weight:650; margin:0 0 16px; letter-spacing:-0.01em}
+p{margin:0 0 14px}
+.abstract{color:var(--text); text-align:justify; hyphens:auto}
+.note{color:var(--muted); font-size:14.5px}
+a{color:var(--accent)}
+
+.samples{width:100%; border-collapse:separate; border-spacing:0; font-size:15px}
+.samples th{
+  text-align:left; font-weight:600; font-size:13px; letter-spacing:.06em;
+  text-transform:uppercase; color:var(--muted); padding:0 14px 10px; border-bottom:1px solid var(--border);
+}
+.samples td{padding:14px; border-bottom:1px solid var(--border); vertical-align:middle}
+.samples tr:hover td{background:var(--panel)}
+.samples td:first-child{width:56%}
+.tag{
+  display:inline-block; font-size:11.5px; font-weight:600; letter-spacing:.04em;
+  color:var(--muted); background:var(--code); border:1px solid var(--border);
+  padding:2px 8px; border-radius:6px; margin-bottom:8px; text-transform:uppercase;
+}
+.ur{
+  font-family:"Noto Nastaliq Urdu",serif; direction:rtl; text-align:right;
+  font-size:19px; line-height:2.4; display:block;
+}
+.en{display:block; font-size:15px}
+audio{width:100%; max-width:300px; height:38px; display:block}
+.compare{display:grid; grid-template-columns:1fr 1fr; gap:18px; margin-top:18px}
+.card{background:var(--panel); border:1px solid var(--border); border-radius:12px; padding:16px}
+.card h3{margin:0 0 4px; font-size:15px; font-weight:600}
+.card .sub{margin:0 0 12px; font-size:13px; color:var(--muted)}
+pre.cite{
+  background:var(--code); border:1px solid var(--border); border-radius:10px;
+  padding:16px; overflow-x:auto; font-size:13px; line-height:1.6;
+  font-family:ui-monospace,SFMono-Regular,Menlo,monospace; margin:0;
+}
+footer{padding:32px 0 56px; color:var(--muted); font-size:14px; text-align:center}
+footer a{color:var(--muted)}
+@media (max-width:640px){
+  header{padding:44px 0 30px}
+  .samples td:first-child{width:auto}
+  .samples, .samples tbody, .samples tr, .samples td{display:block; width:100%}
+  .samples thead{display:none}
+  .samples td{border-bottom:none; padding:8px 0}
+  .samples tr{border-bottom:1px solid var(--border); display:block; padding:14px 0}
+  .samples tr:hover td{background:transparent}
+  .compare{grid-template-columns:1fr}
+  audio{max-width:100%}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <h1>Generative Urdu Speech Synthesis</h1>
+  <p class="authors">
+    <a href="https://github.com/ahmedHanzala">Ahmed Hanzala</a> &nbsp;&middot;&nbsp; Ayesha Kanwal
+  </p>
+  <p class="venue">
+    <strong>ICCS 2024</strong> &mdash; 4th International Conference on Computer Systems &middot; Published in IEEE Xplore
+  </p>
+  <div class="links">
+    <a class="btn" href="https://ieeexplore.ieee.org/document/10795832">
+      <svg viewBox="0 0 16 16"><path d="M4 1h5l4 4v10H4V1zm5 1.5V5h2.5L9 2.5zM5.5 7h5v1h-5V7zm0 2.5h5v1h-5v-1z"/></svg>
+      Paper
+    </a>
+    <a class="btn" href="https://doi.org/10.1109/ICCS62594.2024.10795832">
+      <svg viewBox="0 0 16 16"><path d="M6.5 9.5a3 3 0 004.24 0l2-2a3 3 0 10-4.24-4.24l-.7.7 1.06 1.06.7-.7a1.5 1.5 0 112.12 2.12l-2 2a1.5 1.5 0 01-2.12 0L6.5 9.5zm3-3a3 3 0 00-4.24 0l-2 2a3 3 0 104.24 4.24l.7-.7-1.06-1.06-.7.7a1.5 1.5 0 11-2.12-2.12l2-2a1.5 1.5 0 012.12 0L9.5 6.5z"/></svg>
+      DOI
+    </a>
+    <a class="btn" href="https://github.com/ahmedHanzala/urdu-tts">
+      <svg viewBox="0 0 16 16"><path d="M8 0a8 8 0 00-2.53 15.59c.4.07.55-.17.55-.38l-.01-1.49c-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82a7.42 7.42 0 014 0c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48l-.01 2.19c0 .21.15.46.55.38A8 8 0 008 0z"/></svg>
+      Code
+    </a>
+    <a class="btn" href="https://huggingface.co/zohann/urdu-tts">
+      <svg viewBox="0 0 16 16"><path d="M8 1a7 7 0 100 14A7 7 0 008 1zM5.5 6.5a1 1 0 112 0 1 1 0 01-2 0zm4 0a1 1 0 112 0 1 1 0 01-2 0zM8 12c-1.66 0-3-1.12-3-2.5h6c0 1.38-1.34 2.5-3 2.5z"/></svg>
+      Weights
+    </a>
+    <a class="btn" href="https://colab.research.google.com/drive/1gGKaVaWyl6SCWIBWQehWrgHWiG1teFw4">
+      <svg viewBox="0 0 16 16"><path d="M8 0L1 4v8l7 4 7-4V4L8 0zm0 2.2L13 5v6l-5 2.8L3 11V5l5-2.8z"/></svg>
+      Colab
+    </a>
+  </div>
+</header>
+
+<section>
+  <h2>Abstract</h2>
+  <p class="abstract">
+    In recent years, Natural Language Processing (NLP) and speech synthesis have witnessed
+    significant progress, resulting in the development of advanced Text-to-Speech (TTS) systems
+    for various applications. While many TTS models excel in synthesizing English speech, their
+    adaptability to new languages and diverse accents remains a challenging area of exploration.
+    Urdu is a language spoken by millions of people around the globe, especially in South Asia.
+    Existing TTS models focus mainly on English and Chinese, having minimal focus on Urdu and
+    other low-resource languages. In this paper, we propose a generative Urdu TTS system. This
+    research also undertakes a comprehensive investigation into the challenges associated with
+    Urdu speech synthesis and evaluates the capabilities of Tortoise-TTS, a TTS model inspired by
+    the DALL-E architecture, when applied to non-English languages, with a primary focus on Urdu.
+  </p>
+</section>
+
+<section>
+  <h2>Audio Samples</h2>
+  <p class="note">
+    Speech generated by our finetuned model. The model reads Arabic-Urdu script directly and
+    handles code-switched Urdu&ndash;English prompts.
+  </p>
+  <table class="samples">
+    <thead>
+      <tr><th>Prompt</th><th>Generated speech</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <span class="tag">English on Urdu model</span>
+          <span class="en">we are testing this model for our project.</span>
+        </td>
+        <td><audio controls preload="none" src="audios/english-only.wav"></audio></td>
+      </tr>
+      <tr>
+        <td>
+          <span class="tag">Code-switched</span>
+          <span class="en">I'm doing good</span>
+          <span class="ur">&#1605;&#1740;&#1722; &#1575;&#1670;&#1726;&#1575; &#1729;&#1608;&#1722; &#1570;&#1662; &#1587;&#1606;&#1575;&#1572;</span>
+        </td>
+        <td><audio controls preload="none" src="audios/urdu-n-english.wav"></audio></td>
+      </tr>
+      <tr>
+        <td>
+          <span class="tag">Code-switched</span>
+          <span class="ur">seecs &#1575;&#1740;&#1705; &#1576;&#1729;&#1578; &#1575;&#1670;&#1726;&#1575; &#1672;&#1740;&#1662;&#1575;&#1585;&#1657;&#1605;&#1606;&#1657; &#1729;&#1746;</span>
+        </td>
+        <td><audio controls preload="none" src="audios/urdu-only.m4a"></audio></td>
+      </tr>
+      <tr>
+        <td>
+          <span class="tag">Urdu</span>
+          <span class="ur">&#1570;&#1662; &#1705;&#1575; &#1606;&#1575;&#1605; &#1705;&#1740;&#1575; &#1729;&#1746;&#1567;</span>
+        </td>
+        <td><audio controls preload="none" src="audios/1.wav"></audio></td>
+      </tr>
+      <tr>
+        <td>
+          <span class="tag">Urdu</span>
+          <span class="ur">&#1705;&#1740;&#1575; &#1570;&#1662; &#1575;&#1606;&#1711;&#1585;&#1740;&#1586;&#1740; &#1576;&#1608;&#1604;&#1578;&#1746; &#1729;&#1740;&#1722;&#1567;</span>
+        </td>
+        <td><audio controls preload="none" src="audios/2.wav"></audio></td>
+      </tr>
+      <tr>
+        <td>
+          <span class="tag">Urdu</span>
+          <span class="ur">&#1605;&#1740;&#1722; &#1575;&#1585;&#1583;&#1608; &#1587;&#1740;&#1705;&#1726;&#1606;&#1746; &#1705;&#1740; &#1705;&#1608;&#1588;&#1588; &#1705;&#1585; &#1585;&#1729;&#1575; &#1729;&#1608;&#1722;</span>
+        </td>
+        <td><audio controls preload="none" src="audios/3.wav"></audio></td>
+      </tr>
+      <tr>
+        <td>
+          <span class="tag">Urdu</span>
+          <span class="ur">&#1570;&#1662; &#1705;&#1729;&#1575;&#1722; &#1587;&#1746; &#1729;&#1740;&#1722;&#1567;</span>
+        </td>
+        <td><audio controls preload="none" src="audios/4.wav"></audio></td>
+      </tr>
+      <tr>
+        <td>
+          <span class="tag">Urdu</span>
+          <span class="ur">&#1570;&#1662; &#1587;&#1746; &#1605;&#1604; &#1705;&#1585; &#1582;&#1608;&#1588;&#1740; &#1729;&#1608;&#1574;&#1740;</span>
+        </td>
+        <td><audio controls preload="none" src="audios/5.wav"></audio></td>
+      </tr>
+      <tr>
+        <td>
+          <span class="tag">Urdu</span>
+          <span class="ur">&#1740;&#1729; &#1605;&#1580;&#1726;&#1746; &#1576;&#1729;&#1578; &#1662;&#1614;&#1587;&#1606;&#1583; &#1570;&#1740;&#1575;!</span>
+        </td>
+        <td><audio controls preload="none" src="audios/7.wav"></audio></td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+<section>
+  <h2>Baseline vs. Finetuned</h2>
+  <p class="note">
+    Tortoise-TTS captures European and American accents well, but americanizes non-native
+    speakers when cloning. Finetuning on a South-Asian accent dataset preserves the speaker's
+    accent and enables Urdu script synthesis.
+  </p>
+
+  <p class="note" style="margin-top:22px"><strong>Prompt:</strong> we are testing this model for our project.</p>
+  <div class="compare">
+    <div class="card">
+      <h3>Tortoise-TTS (baseline)</h3>
+      <p class="sub">Cloning a South-Asian accent</p>
+      <audio controls preload="none" src="audios/compare/baseline-accent.m4a"></audio>
+    </div>
+    <div class="card">
+      <h3>Ours (finetuned)</h3>
+      <p class="sub">Cloning a South-Asian accent</p>
+      <audio controls preload="none" src="audios/compare/ours-accent.m4a"></audio>
+    </div>
+  </div>
+
+  <p class="note" style="margin-top:26px">
+    <strong>Prompt:</strong>
+    <span class="ur" style="line-height:2">seecs &#1575;&#1740;&#1705; &#1576;&#1729;&#1578; &#1575;&#1670;&#1726;&#1575; &#1672;&#1740;&#1662;&#1575;&#1585;&#1657;&#1605;&#1606;&#1657; &#1729;&#1746;</span>
+  </p>
+  <div class="compare">
+    <div class="card">
+      <h3>Tortoise-TTS (baseline)</h3>
+      <p class="sub">Urdu script</p>
+      <audio controls preload="none" src="audios/compare/baseline-urdu.m4a"></audio>
+    </div>
+    <div class="card">
+      <h3>Ours (finetuned)</h3>
+      <p class="sub">Urdu script</p>
+      <audio controls preload="none" src="audios/compare/ours-urdu.m4a"></audio>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Citation</h2>
+<pre class="cite">@inproceedings{hanzala2024urdutts,
+  title     = {Generative Urdu Speech Synthesis},
+  author    = {Hanzala, Ahmed and Kanwal, Ayesha},
+  booktitle = {2024 4th International Conference on Computer Systems (ICCS)},
+  year      = {2024},
+  publisher = {IEEE},
+  doi       = {10.1109/ICCS62594.2024.10795832}
+}</pre>
+</section>
+
+<footer>
+  Released under the MIT License &middot;
+  <a href="https://github.com/ahmedHanzala/urdu-tts">github.com/ahmedHanzala/urdu-tts</a><br>
+  Built on <a href="https://github.com/neonbjb/tortoise-tts">tortoise-tts</a> and
+  <a href="https://github.com/152334H/DL-Art-School">DL-Art-School</a>
+</footer>
+
+</div>
+</body>
+</html>
